@@ -1,0 +1,16 @@
+.large-hero{
+    position: relative;
+}
+
+.large-hero__text-content{
+    /*position the text in top left corner of the image: top:0; left:0;
+    position it vertically centered: top:50%; transform: translateY(-50%);
+    position:absolute is common in both the cases*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+        
+    /*Now lets center it horizontally*/
+    width: 100%;
+    text-align: center;
+}

@@ -1,1 +1,16 @@
-  
+/* 
+import is native css code. we will write gulp task to convert this and use in our main style.css file.
+For that we have to import 'postcss-import' package using npm command.
+1)Go to commoand line enter--> npm install postcss-import --save-dev.
+2)Import 'postcss-import' in gulfile.js
+3)Inside gulp task of styles add that variable which imports postcss in an arary.
+
+Also 'normalize.css' is present in node_modules package, which is not our css. but with this postcss import we can import that file directly in our main css.
+normalize.css---> render the elements on all web browser normally. It's very helpful.
+*/
+@import "normalize.css";
+@import "base/_global";
+@import "modules/_large-hero";
+
+
+

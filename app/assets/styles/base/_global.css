@@ -1,0 +1,12 @@
+/*Global Font and color*/
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+
+/*To fit the inmage on browser screen, This is the Global CSS*/
+img{
+    max-width: 100%;
+    height: auto;
+}
