@@ -1,0 +1,21 @@
+.btn{
+  background-color: $mainBlue;
+  color: #fff;
+  /* Removes the underline */
+  text-decoration: none;
+  /* 0.75 will be used as top and bottom padding & 1.2rem is used as left and right padding */
+  padding:0.75rem 1.2rem;
+ /* Refer MDN Doc for displauy property */
+  display: inline-block;
+   
+    /* This is for Button button which is at the bottom. we just need to change its color to orange*/
+    &--orange{
+        background-color: $mainOrange;
+    }
+
+    /*This is for button which is on banner, we want it little bit larger than original button. therefore we will increase the padding here.*/
+    &--large{
+        font-size: 1.25rem;
+        padding: 1.1rem 1.9rem
+    }
+}

@@ -1,8 +1,7 @@
 .large-hero {
     position: relative;
 
-
-    /*We have used this '&' here to achive nesting in '_large-hero' css and at the same time to follow clear BEM rules in our 'temp/styles/styles.css' file. so that 'temp/styles/styles.css' css also looks nice. 
+    /*We have used this '&' here to achive nesting in '_large-hero' css and at the same time to follow clear BEM rules in our 'temp/styles/styles.css' file. so that 'temp/styles/styles.css' css also looks nice.
     Refer lecture: what is BEM(14)*/
     &__text-content {
         /*position the text in top left corner of the image: top:0; left:0;
@@ -20,16 +19,52 @@
     &__title {
         /*font-weight: To change the boldness of text*/
         font-weight: 300;
-        color: #2f5572;
+        /* this mainBlue variable is defined in variables.css and imported in our main css file so that we can use it in multiple files directly. */
+        color: $mainBlue;
+        /* To remove the spaces in between the title and subtitle*/
+        margin: 0;
         /*The rem unit is relative to the root—or the html—element. That means that we can define a single font size on the html element and define all rem units to be a percentage of that.
-        Relative to the font-size of the root element (2rem means 2 times the size of the root element <html>)*/
-        font-size: 4.8rem;
+        Relative to the font-size of the root element (2rem means 2 times the size of the root element <html>).
+        For more details see video lecture 15 time 3.40 min.*/
+        font-size: 1.1rem;
+        
+        /*We are writing 'Mobile-first' so above font size will be for mobile view and below media query is writen for different views larger than mobile.Here we have used 'postcss-mixin' npm package to write media query at one place.(_mixin.css).Check lecture 19*/
+        @mixin atSmall{
+            font-size: 2rem;
+        }
+        
+         @mixin atMedium{
+            font-size: 3.2rem;
+        }
+        
+         @mixin atLarge{
+            font-size: 4.8rem;
+        }
+            
     }
 
 
     &__subtitle {
         font-weight: 300;
-        color: #2f5572;
+        color: $mainBlue;
+        margin: 0;
         font-size: 2.9rem;
+    }
+
+    &__description{
+      color: #ffff;
+      font-size: 1.875rem;
+      /* To decrese the boldness of the text */
+      font-weight: 100;
+       /*This is used to give shadow to text, and these are the parameters for text-shadow:
+        offset-x | offset-y | blur-radius | color
+        Also refer MDN documentation.*/
+      text-shadow: 2px 2px 0 rgba(0,0,0,.1);
+      /* max-width allows to break the whole single line into two lines text */
+      max-width: 30rem;
+      /* But now text is align to left, Let's make it to the center.
+      By giving auto margin from left and right text is evenly distributed from left and right*/
+      margin-left: auto;
+      margin-right: auto;
     }
 }

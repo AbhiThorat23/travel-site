@@ -1,4 +1,4 @@
-/* 
+/*
 import is native css code. we will write gulp task to convert this and use in our main style.css file.
 For that we have to import 'postcss-import' package using npm command.
 1)Go to commoand line enter--> npm install postcss-import --save-dev.
@@ -379,7 +379,7 @@ img{
 .large-hero {
     position: relative;
 }
-/*We have used this '&' here to achive nesting in '_large-hero' css and at the same time to follow clear BEM rules in our 'temp/styles/styles.css' file. so that 'temp/styles/styles.css' css also looks nice. 
+/*We have used this '&' here to achive nesting in '_large-hero' css and at the same time to follow clear BEM rules in our 'temp/styles/styles.css' file. so that 'temp/styles/styles.css' css also looks nice.
     Refer lecture: what is BEM(14)*/
 .large-hero__text-content {
         /*position the text in top left corner of the image: top:0; left:0;
@@ -396,16 +396,73 @@ img{
 .large-hero__title {
         /*font-weight: To change the boldness of text*/
         font-weight: 300;
+        /* this mainBlue variable is defined in variables.css and imported in our main css file so that we can use it in multiple files directly. */
         color: #2f5572;
+        /* To remove the spaces in between the title and subtitle*/
+        margin: 0;
         /*The rem unit is relative to the root—or the html—element. That means that we can define a single font size on the html element and define all rem units to be a percentage of that.
-        Relative to the font-size of the root element (2rem means 2 times the size of the root element <html>)*/
-        font-size: 4.8rem;
+        Relative to the font-size of the root element (2rem means 2 times the size of the root element <html>).
+        For more details see video lecture 15 time 3.40 min.*/
+        font-size: 1.1rem;
+            
+    }
+/*We are writing 'Mobile-first' so above font size will be for mobile view and below media query is writen for different views larger than mobile.Here we have used 'postcss-mixin' npm package to write media query at one place.(_mixin.css).Check lecture 19*/
+@media (min-width: 530px){
+.large-hero__title {
+            font-size: 2rem
+            
+    }
+    }
+@media (min-width: 800px){
+.large-hero__title {
+            font-size: 3.2rem
+            
+    }
+    }
+@media (min-width: 1200px){
+.large-hero__title {
+            font-size: 4.8rem
+            
+    }
     }
 .large-hero__subtitle {
         font-weight: 300;
         color: #2f5572;
+        margin: 0;
         font-size: 2.9rem;
     }
-
-
-
+.large-hero__description{
+      color: #ffff;
+      font-size: 1.875rem;
+      /* To decrese the boldness of the text */
+      font-weight: 100;
+       /*This is used to give shadow to text, and these are the parameters for text-shadow:
+        offset-x | offset-y | blur-radius | color
+        Also refer MDN documentation.*/
+      text-shadow: 2px 2px 0 rgba(0,0,0,.1);
+      /* max-width allows to break the whole single line into two lines text */
+      max-width: 30rem;
+      /* But now text is align to left, Let's make it to the center.
+      By giving auto margin from left and right text is evenly distributed from left and right*/
+      margin-left: auto;
+      margin-right: auto;
+    }
+.btn{
+  background-color: #2f5572;
+  color: #fff;
+  /* Removes the underline */
+  text-decoration: none;
+  /* 0.75 will be used as top and bottom padding & 1.2rem is used as left and right padding */
+  padding:0.75rem 1.2rem;
+ /* Refer MDN Doc for displauy property */
+  display: inline-block;
+}
+/* This is for Button button which is at the bottom. we just need to change its color to orange*/
+.btn--orange{
+        background-color: #d59541;
+    }
+/*This is for button which is on banner, we want it little bit larger than original button. therefore we will increase the padding here.*/
+.btn--large{
+        font-size: 1.25rem;
+        padding: 1.1rem 1.9rem
+    }

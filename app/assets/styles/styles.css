@@ -1,4 +1,4 @@
-/* 
+/*
 import is native css code. we will write gulp task to convert this and use in our main style.css file.
 For that we have to import 'postcss-import' package using npm command.
 1)Go to commoand line enter--> npm install postcss-import --save-dev.
@@ -10,7 +10,7 @@ normalize.css---> render the elements on all web browser normally. It's very hel
 */
 @import "normalize.css";
 @import "base/_global";
+@import "base/_variables";
+@import "base/_mixins";
 @import "modules/_large-hero";
-
-
-
+@import "modules/_btn";
